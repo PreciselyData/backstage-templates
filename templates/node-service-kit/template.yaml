@@ -15,7 +15,7 @@ spec:
       properties:
         name:
           title: Repository Name
-          typer: string
+          type: string
           description: Unique name for the repository
           ui:autofocus: true
         group:
