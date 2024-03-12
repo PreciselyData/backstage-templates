@@ -24,3 +24,31 @@ spec:
     picture: https://avatars.githubusercontent.com/u/7646043?s=40&v=4
   parent: precisely
   children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: it
+  description: Precisely IT Group
+spec:
+  type: team
+  profile:
+    displayName: Precisely IT Crowd
+    email: precisely-it@precisely.com
+    picture: https://avatars.githubusercontent.com/u/7646043?s=40&v=4
+  parent: precisely
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ops
+  description: Precisely Operations Group
+spec:
+  type: team
+  profile:
+    displayName: Precisely DevOps
+    email: precisely-devops@precisely.com
+    picture: https://avatars.githubusercontent.com/u/7646043?s=40&v=4
+  parent: precisely
+  children: []
