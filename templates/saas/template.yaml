@@ -146,7 +146,6 @@ spec:
         backstage-options:
           title: Select options for inclusion in the Internal Developer Portal
           type: array
-          description: Select options for setup inside Backstage
           items:
             type: boolean
             enum:
