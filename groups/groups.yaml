@@ -52,14 +52,3 @@ spec:
     picture: https://avatars.githubusercontent.com/u/7646043?s=40&v=4
   parent: precisely
   children: []
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: ksuenobu
-spec:
-  profile:
-    displayName: Ken Suenobu
-    email: ksuenobu@fastmail.com
-    picture: https://avatars.githubusercontent.com/u/20155?v=4
-  memberOf: [dev]
