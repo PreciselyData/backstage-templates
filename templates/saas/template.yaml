@@ -73,26 +73,25 @@ spec:
           title: Select language
           type: string
           description: The language that will be used in this project
-          items:
-            type: string
-            enum:
-              - binary
-              - node
-              - java
-              - scala
-              - go
-              - c-cpp
-              - rust
-              - shell
-            enumNames:
-              - Binary
-              - JavaScript or TypeScript (Node)
-              - Java Development Kit
-              - Scala
-              - Go
-              - C/C++ with Makefile/gmake
-              - Rust
-              - Shell script
+          default: java
+          enum:
+            - binary
+            - node
+            - java
+            - scala
+            - go
+            - c-cpp
+            - rust
+            - shell
+          enumNames:
+            - Binary
+            - JavaScript or TypeScript (Node)
+            - Java Development Kit
+            - Scala
+            - Go
+            - C/C++ with Makefile/gmake
+            - Rust
+            - Shell script
     - title: Desired pipelines
       properties:
         desired-pipelines:
