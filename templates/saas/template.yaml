@@ -94,7 +94,7 @@ spec:
           description: Select the additional building items you'd like to include in this repository
           type: array
           items:
-            type: boolean
+            type: string
             enum:
               - 'Redocly support for OpenAPI'
               - '.prettierrc file for code standards and code quality'
@@ -108,7 +108,7 @@ spec:
           title: Select desired pipeline operations to include when creating this repository
           type: array
           items:
-            type: boolean
+            type: string
             enum:
               - 'Enable Workflows'
               - 'Enable automatic build'
@@ -135,29 +135,28 @@ spec:
               - 'Enable testing on production environment'
           uniqueItems: true
           ui:widget: checkboxes
-        preset-variables:
-          title: Free-form variables here, in the format of key=value
-          type: object
-          description: Add key/value options here
-          required:
-            - key
-            - value
-          additionalProperties:
-            type: string
-          properties:
-            - key
-              type: string
-              title: Key name
-            - value
-              type: string
-              title: Value assigned to the key
+    - title: Additional variables
+      description: Any additional variables to include with the build environment
+      type: object
+      required:
+        - key
+        - value
+      additionalProperties:
+        type: string
+      properties:
+        key:
+          type: string
+          title: Key
+        value:
+          type: string
+          title: Value for the key
     - title: Backstage inclusion options
       properties:
         backstage-options:
           title: Select options for inclusion in the Internal Developer Portal
           type: array
           items:
-            type: boolean
+            type: string
             enum:
               - 'Add project to APIs'
               - 'Add project to CI/CD section'
@@ -165,7 +164,6 @@ spec:
               - 'Add to projects section'
           uniqueItems: true
           ui:widget: checkboxes
-
   steps:
     - id: fetch-base
       name: Fetch Base
