@@ -16,8 +16,9 @@ spec:
         name:
           title: Repository Name
           type: string
-          description: Unique name for the repository
+          description: Unique name for the repository (must be at least 4 characters in length)
           ui:autofocus: true
+          minLength: 4
         group:
           title: Repository Group
           type: string
@@ -136,11 +137,20 @@ spec:
           ui:widget: checkboxes
         preset-variables:
           title: Free-form variables here, in the format of key=value
-          type: string
-          description: Copy and paste key/value variables here, or assign them as necessary here.
-          ui:widget: textarea
-          ui:options:
-            rows: 10
+          type: object
+          description: Add key/value options here
+          required:
+            - key
+            - value
+          additionalProperties:
+            type: string
+          properties:
+            - key
+              type: string
+              title: Key name
+            - value
+              type: string
+              title: Value assigned to the key
     - title: Backstage inclusion options
       properties:
         backstage-options:
