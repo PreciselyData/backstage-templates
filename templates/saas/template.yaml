@@ -9,7 +9,7 @@ spec:
   type: service
 
   parameters:
-    - title: Create a new repository
+    - title: Create and configure a new repository
       required:
         - name
       properties:
@@ -65,10 +65,6 @@ spec:
             - Professional Services
             - Project Templates
             - UI UX Globalization
-    - title: Language Support
-      required:
-        - language
-      properties:
         language:
           title: Select language
           type: string
@@ -103,19 +99,19 @@ spec:
               - 'Enable Workflows'
               - 'Enable automatic build'
               - 'Enable Testing Framework'
-              - '    Testing: Omit Gitleaks'
-              - '    Testing: Omit SCA'
-              - '    Testing: Omit SAST'
-              - '    Testing: Omit Code Coverage / Quality (SonarQube)'
-              - '    Testing: Omit LaunchDarkly to Find Code Refs'
+              - '--- Testing: Omit Gitleaks'
+              - '--- Testing: Omit SCA'
+              - '--- Testing: Omit SAST'
+              - '--- Testing: Omit Code Coverage / Quality (SonarQube)'
+              - '--- Testing: Omit LaunchDarkly to Find Code Refs'
               - 'Enable Publishing'
-              - '    Publishing: Omit Docker container build step'
-              - '    Publishing: Omit Docker container security step'
-              - '    Publishing: Omit Docker container signing step'
+              - '--- Publishing: Omit Docker container build step'
+              - '--- Publishing: Omit Docker container security step'
+              - '--- Publishing: Omit Docker container signing step'
               - 'Enable Preview'
-              - '    Preview: Omit ephemeral environment'
+              - '--- Preview: Omit ephemeral environment'
               - 'Enable Release to Development Environment'
-              - '    Development release: Omit release to ECR'
+              - '--- Development release: Omit release to ECR'
               - 'Enable deploy to development'
               - 'Enable testing on development environment'
               - 'Enable creation of release build'
@@ -126,13 +122,12 @@ spec:
           uniqueItems: true
           ui:widget: checkboxes
         preset-variables:
-          multiline:
-            title: Free-form variables here, in the format of key=value
-            type: string
-            description: Copy and paste key/value variables here, or assign them as necessary here.
-            ui:widget: textarea
-            ui:options:
-              rows: 10
+          title: Free-form variables here, in the format of key=value
+          type: string
+          description: Copy and paste key/value variables here, or assign them as necessary here.
+          ui:widget: textarea
+          ui:options:
+            rows: 10
 
   steps:
     - id: fetch-base
