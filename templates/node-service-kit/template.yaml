@@ -78,7 +78,8 @@ spec:
               - authentication
               - bullmq
               - cache
-              - graphQL
+              - graphQL-mercurium
+              - graphQL-apollo
               - health
               - instrumentation
               - jsonApi
@@ -91,7 +92,8 @@ spec:
               - JWT Authentication
               - BullMQ
               - Memory Cache
-              - GraphQL (Graph Query Language)
+              - GraphQL (Graph Query Language) via Mercurium
+              - GraphQL (Graph Query Language) via Apollo
               - System Health Check
               - OpenTelemetry Instrumentation
               - JSON API Stack
