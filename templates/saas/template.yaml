@@ -96,10 +96,12 @@ spec:
           items:
             type: string
             enum:
-              - 'Redocly support for OpenAPI'
+              - 'Add Redocly support for OpenAPI'
               - '.prettierrc file for code standards and code quality'
-              - 'Auto-generate initial markdown documentation (includes catalog-info.yaml and mkdocs.yml)'
-              - 'Auto-generate README.md for the project'
+              - 'Create README.md for the project'
+              - 'Create initial markdown documentation (includes catalog-info.yaml and mkdocs.yml)'
+              - 'Create initial test cases appropriate for the language selected'
+              - 'Add linting rule to build'
           uniqueItems: true
           ui:widget: checkboxes
     - title: Desired pipelines
