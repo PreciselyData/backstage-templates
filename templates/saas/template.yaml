@@ -136,20 +136,16 @@ spec:
           uniqueItems: true
           ui:widget: checkboxes
     - title: Additional variables
-      description: Any additional variables to include with the build environment
-      type: object
-      required:
-        - envKey
-        - envValue
-      additionalProperties:
-        type: string
       properties:
-        envKey:
+        additional-variables:
+          title: Free-form enter any additional variables to include in the build environment
           type: string
-          title: Key
-        envValue:
-          type: string
-          title: Value for the key
+          ui:widget: textarea
+          ui:options:
+            rows: 10
+          ui:placeholder: |
+            KEY1=VAR1
+            KEY2=VAR2
     - title: Backstage inclusion options
       properties:
         backstage-options:
