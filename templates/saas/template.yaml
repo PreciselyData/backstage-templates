@@ -88,6 +88,19 @@ spec:
             - C/C++ with Makefile/gmake
             - Rust
             - Shell script
+        build-additions:
+          title: Select additional build options
+          description: Select the additional building items you'd like to include in this repository
+          type: array
+          items:
+            type: boolean
+            enum:
+              - 'Redocly support for OpenAPI'
+              - '.prettierrc file for code standards and code quality'
+              - 'Auto-generate initial markdown documentation (includes catalog-info.yaml and mkdocs.yml)'
+              - 'Auto-generate README.md for the project'
+          uniqueItems: true
+          ui:widget: checkboxes
     - title: Desired pipelines
       properties:
         desired-pipelines:
@@ -128,6 +141,22 @@ spec:
           ui:widget: textarea
           ui:options:
             rows: 10
+    - title: Backstage inclusion options
+      properties:
+        backstage-options:
+          title: Select additional build options
+          type: array
+          description: Select any additional options you would like when creating this project
+          items:
+            type: boolean
+            enum:
+              - 'Add project to APIs'
+              - 'Add project to CI/CD section'
+              - 'Automatically create a Slack channel'
+              - 'Add to projects section'
+          uniqueItems: true
+          ui:widget: checkboxes
+
 
   steps:
     - id: fetch-base
