@@ -86,7 +86,9 @@ spec:
               - kafka
               - launchDarkly
               - mongo
+              - node-red
               - swagger
+              - temporal
               - validator
             enumNames:
               - JWT Authentication
@@ -100,7 +102,9 @@ spec:
               - Kafka
               - LaunchDarkly
               - MongoDB
+              - Node-RED Workflows
               - Swagger/REST API Services
+              - Temporal Workflows
               - Input and JSON Body Validation
 
   steps:
