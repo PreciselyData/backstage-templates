@@ -56,10 +56,10 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: ksuenobu
+  name: ksuenobu@fastmail.com
 spec:
   profile:
-    displayName: Kenji Suenobu
+    displayName: Ken Suenobu
     email: ksuenobu@fastmail.com
     picture: https://avatars.githubusercontent.com/u/20155?v=4
   memberOf: [dev]
