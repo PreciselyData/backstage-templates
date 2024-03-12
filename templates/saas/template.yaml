@@ -1,0 +1,158 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: saas
+  title: Precisely SaaS
+  description: Creates a new Software as a Service microservice project in the Precisely project space.
+spec:
+  owner: backstage/techdocs-core
+  type: service
+
+  parameters:
+    - title: Create a new repository
+      required:
+        - name
+      properties:
+        name:
+          title: Repository Name
+          type: string
+          description: Unique name for the repository
+          ui:autofocus: true
+        group:
+          title: Repository Group
+          type: string
+          description: Group under which this repository will belong (you must have permissions)
+          default: devops
+          enum:
+            - assure
+            - automate-saas-platform
+            - cloud
+            - customer-onboarding
+            - data
+            - data-integration
+            - data-quality
+            - datahub
+            - devops
+            - di-suite-catalog
+            - DI-Suite-SaaS-Platform
+            - engageone
+            - engineering
+            - govern
+            - ibm-infrastructure
+            - location-intelligence
+            - precisely-labs
+            - professional-services
+            - project-templates
+            - ui-ux-globalization
+          enumNames:
+            - Assure
+            - Automate SaaS Platform
+            - Cloud
+            - Customer Onboarding
+            - Data
+            - Data Integration
+            - Data Quality
+            - Datahub
+            - DevOps
+            - DI Suite Catalog
+            - DI Suite SaaS Platform
+            - EngageOne
+            - Engineering
+            - Govern
+            - IBM Infrastructure Research and Development
+            - Location Intelligence
+            - Precisely Labs
+            - Professional Services
+            - Project Templates
+            - UI UX Globalization
+    - title: Language Support
+      required:
+        - language
+      properties:
+        language:
+          title: Select language
+          type: string
+          description: The language that will be used in this project
+          items:
+            type: string
+            enum:
+              - binary
+              - node
+              - java
+              - scala
+              - go
+              - c-cpp
+              - rust
+              - shell
+            enumNames:
+              - Binary
+              - JavaScript or TypeScript (Node)
+              - Java Development Kit
+              - Scala
+              - Go
+              - C/C++ with Makefile/gmake
+              - Rust
+              - Shell script
+    - title: Desired pipelines
+      properties:
+        desired-pipelines:
+          title: Select desired pipeline operations to include when creating this repository
+          type: array
+          items:
+            type: boolean
+            enum:
+              - 'Enable Workflows'
+              - 'Enable automatic build'
+              - 'Enable Testing Framework'
+              - '    Testing: Omit Gitleaks'
+              - '    Testing: Omit SCA'
+              - '    Testing: Omit SAST'
+              - '    Testing: Omit Code Coverage / Quality (SonarQube)'
+              - '    Testing: Omit LaunchDarkly to Find Code Refs'
+              - 'Enable Publishing'
+              - '    Publishing: Omit Docker container build step'
+              - '    Publishing: Omit Docker container security step'
+              - '    Publishing: Omit Docker container signing step'
+              - 'Enable Preview'
+              - '    Preview: Omit ephemeral environment'
+              - 'Enable Release to Development Environment'
+              - '    Development release: Omit release to ECR'
+              - 'Enable deploy to development'
+              - 'Enable testing on development environment'
+              - 'Enable creation of release build'
+              - 'Enable deploy to staging'
+              - 'Enable testing on staging environment'
+              - 'Enable deploy to production'
+              - 'Enable testing on production environment'
+          uniqueItems: true
+          ui:widget: checkboxes
+        preset-variables:
+          multiline:
+            title: Free-form variables here, in the format of key=value
+            type: string
+            description: Copy and paste key/value variables here, or assign them as necessary here.
+            ui:widget: textarea
+            ui:options:
+              rows: 10
+            ui:placeholder: |
+              TEMP_DIR=/
+              AWS_KEY=${AWS_KEY}
+              AWS_SECRET=${AWS_SECRET}
+
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./template
+        values:
+          name: ${{ parameters.name }}
+          group: ${{ parameters.group }}
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
