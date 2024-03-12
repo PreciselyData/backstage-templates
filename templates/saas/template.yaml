@@ -144,9 +144,9 @@ spec:
     - title: Backstage inclusion options
       properties:
         backstage-options:
-          title: Select additional build options
+          title: Select options for inclusion in the Internal Developer Portal
           type: array
-          description: Select any additional options you would like when creating this project
+          description: Select options for setup inside Backstage
           items:
             type: boolean
             enum:
@@ -156,7 +156,6 @@ spec:
               - 'Add to projects section'
           uniqueItems: true
           ui:widget: checkboxes
-
 
   steps:
     - id: fetch-base
