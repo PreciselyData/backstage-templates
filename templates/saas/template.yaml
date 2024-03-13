@@ -102,6 +102,8 @@ spec:
               - 'Create initial markdown documentation (includes catalog-info.yaml and mkdocs.yml)'
               - 'Create initial test cases appropriate for the language selected'
               - 'Add linting rule to build'
+              - 'Add section to Backstage entity file to allow linking to Jira Dashboard (requires manual editing)'
+              - 'Add section to Backstage entity file to allow linking to Kafka (requires manual editing)'
           uniqueItems: true
           ui:widget: checkboxes
     - title: Desired pipelines
@@ -113,28 +115,18 @@ spec:
             type: string
             enum:
               - 'Enable Workflows'
-              - 'Enable automatic build'
+              - 'Enable Automatic build'
               - 'Enable Testing Framework'
-              - '--- Testing: Omit Gitleaks'
-              - '--- Testing: Omit SCA'
-              - '--- Testing: Omit SAST'
-              - '--- Testing: Omit Code Coverage / Quality (SonarQube)'
-              - '--- Testing: Omit LaunchDarkly to Find Code Refs'
               - 'Enable Publishing'
-              - '--- Publishing: Omit Docker container build step'
-              - '--- Publishing: Omit Docker container security step'
-              - '--- Publishing: Omit Docker container signing step'
               - 'Enable Preview'
-              - '--- Preview: Omit ephemeral environment'
               - 'Enable Release to Development Environment'
-              - '--- Development release: Omit release to ECR'
-              - 'Enable deploy to development'
-              - 'Enable testing on development environment'
-              - 'Enable creation of release build'
-              - 'Enable deploy to staging'
-              - 'Enable testing on staging environment'
-              - 'Enable deploy to production'
-              - 'Enable testing on production environment'
+              - 'Enable Deploy to development'
+              - 'Enable Testing on development environment'
+              - 'Enable Creation of release build'
+              - 'Enable Deploy to staging'
+              - 'Enable Testing on staging environment'
+              - 'Enable Deploy to production'
+              - 'Enable Testing on production environment'
           uniqueItems: true
           ui:widget: checkboxes
     - title: Additional variables
