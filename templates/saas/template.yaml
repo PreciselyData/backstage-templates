@@ -98,6 +98,7 @@ spec:
             enum:
               - 'Add Redocly support for OpenAPI (linting, validation, and testing)'
               - 'Add .prettierrc file for code standards and code quality'
+              - 'Add Internationalization (i18n) rules files'
               - 'Create README.md for the project'
               - 'Create initial markdown documentation (includes catalog-info.yaml and mkdocs.yml)'
               - 'Create initial test cases appropriate for the language selected'
