@@ -81,7 +81,7 @@ spec:
             - rust
             - shell
           enumNames:
-            - Binary
+            - Binary 🧌
             - JavaScript or TypeScript (Node)
             - Java Development Kit
             - Scala
