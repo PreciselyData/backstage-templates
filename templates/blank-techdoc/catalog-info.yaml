@@ -7,4 +7,4 @@ metadata:
 spec:
   type: documentation
   lifecycle: experimental
-  owner: backstage/techdocs-core
+  owner: precisely

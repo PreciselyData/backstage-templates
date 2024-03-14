@@ -5,7 +5,7 @@ metadata:
   title: Node Service Kit
   description: Creates a new project using the node-service-kit, for Node 18+ projects with multiple Fastify feature sets preconfigured.
 spec:
-  owner: backstage/techdocs-core
+  owner: precisely
   type: service
 
   parameters:

@@ -5,7 +5,7 @@ metadata:
   title: Precisely SaaS
   description: Creates a new Software as a Service microservice project in the Precisely project space.
 spec:
-  owner: backstage/techdocs-core
+  owner: precisely
   type: service
 
   parameters:
