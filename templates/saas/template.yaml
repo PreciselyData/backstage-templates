@@ -100,7 +100,7 @@ spec:
               - 'Add .prettierrc file for code standards and code quality'
               - 'Add Internationalization (i18n) rules files'
               - 'Create README.md for the project'
-              - 'Create initial markdown documentation (includes catalog-info.yaml and mkdocs.yml)'
+              - 'Create initial markdown documentation (includes catalog-info.yaml and mkdocs.yaml)'
               - 'Create initial test cases appropriate for the language selected'
               - 'Add linting rule to build'
               - 'Add section to Backstage entity file to allow linking to Jira Dashboard (requires manual editing)'
