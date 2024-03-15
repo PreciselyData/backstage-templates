@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: blank-techdoc
+  description: Blank technical documents
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
